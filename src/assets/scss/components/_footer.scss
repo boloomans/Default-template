@@ -1,0 +1,68 @@
+footer {
+  background: $primary-color;
+  border-top: rem-calc(3) solid $white;
+
+  .footer-top {
+    text-align: center;
+    padding: rem-calc(80 0);
+    @include breakpoint(small down){
+      padding: rem-calc(20 0);
+    }
+
+    a{
+      padding: rem-calc(0 14);
+      display: inline-block;
+      color: $white;
+
+      i{
+        font-size: rem-calc(30);
+        text-shadow: 0px 1px 0px #0092b3, 0px 2px 0px #0087a6, 0px 3px 0px #008099, 0px 4px 0px #00758c;
+      }
+
+      &:hover{
+        color: scale-color(get-color(primary), $lightness: 20%)
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding: rem-calc(18 0);
+    border-top: rem-calc(1) solid #7ED1D4;
+    overflow: hidden;
+    text-transform: capitalize;
+
+    @include breakpoint(medium down){
+      text-align: center;
+    }
+
+    a {
+      padding-right: rem-calc(16);
+      color: $white;
+      font-weight: $global-weight-bold;
+
+      @include breakpoint(medium down){
+        display: block;
+        width: 100%;
+        padding-left: rem-calc(16);
+      }
+
+      + a{
+        padding-left: rem-calc(16);
+      }
+
+      &:hover{
+        color: scale-color(get-color(primary), $lightness: 20%)
+      }
+    }
+
+    .made-by {
+      @include breakpoint(large up){
+        float: right;
+      }
+
+      a{
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,353 @@
+/* ----------------------------- Variables */
+
+$ss-header-padding: rem-calc(10 20);
+$ss-header-margin: 0;
+$ss-header-font-size: 1rem;
+$ss-header-font-weight: $global-weight-bold;
+$ss-header-font-family: $header-font-family;
+$ss-header-line-height: 1.2rem;
+$ss-header-color: $primary-color;
+$ss-header-background: $light-gray;
+
+$ss-result-even-background: $light-gray;
+$ss-result-uneven-background: $white;
+$ss-result-padding: rem-calc(13 20 20 20);
+
+$ss-result-title-margin: 0;
+$ss-result-title-color: $primary-color;
+$ss-result-title-hover-color: darken($primary-color, 8);
+$ss-result-title-font-size: 1.5rem;
+$ss-result-title-font-weight: $global-weight-bold;
+$ss-result-title-font-family: $header-font-family;
+
+$ss-result-text-color: $dark-gray;
+$ss-result-text-font-size: 0.875rem;
+$ss-result-text-line-height: 1.375rem;
+$ss-result-text-font-weight: $global-weight-normal;
+$ss-result-text-font-family: $body-font-family;
+
+$ss-result-image-margin: rem-calc(6 20 0 0);
+
+$ss-result-highlight-font-weight: $ss-result-title-font-weight;
+$ss-result-highlight-color: $ss-result-title-color;
+
+$ss-pager-margin: rem-calc(20) 0 0 0;
+$ss-pager-item-padding: rem-calc(18 20);
+$ss-pager-item-margin: 0 0 rem-calc(20) 0;
+$ss-pager-item-font-size: 0.875rem;
+$ss-pager-item-font-weight: $global-weight-bold;
+$ss-pager-item-font-family: $header-font-family;
+$ss-pager-item-line-height: 0.875rem;
+$ss-pager-item-color: $primary-color;
+$ss-pager-item-background-color: $light-gray;
+$ss-pager-item-hover-color: $white;
+$ss-pager-item-hover-background-color: $primary-color;
+
+
+/* ----------------------------- Search container */
+
+.search-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  .search-form {
+    width: 80%;
+    max-width: rem-calc(800);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    color: $white;
+
+    .search-input {
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-bottom: rem-calc(3) solid $white;
+      background-color: transparent;
+      outline: 0;
+      box-shadow: none;
+      color: $white;
+      width: 100%;
+      float: left;
+    }
+
+    .search-input::-ms-clear {
+      display: none;
+    }
+
+    .search-input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
+    .search-input::placeholder {
+      color: $white;
+      font-style: italic;
+    }
+
+    .search-input:-moz-placeholder {
+      color: $white;
+      font-style: italic;
+    }
+
+    .search-input:-ms-input-placeholder {
+      color: $white;
+      font-style: italic;
+    }
+
+    .search-input::-moz-placeholder {
+      color: $white;
+      font-style: italic;
+    }
+
+    .search-input::-webkit-input-placeholder {
+      color: $white;
+      font-style: italic;
+    }
+
+    .icon {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  .close-search {
+    position: absolute;
+    top: rem-calc(35);
+    right: rem-calc(35);
+    color: $white;
+    font-size: rem-calc(50);
+    line-height: 1;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+
+
+
+
+/* =========== SEARCH RESULTS =========== */
+
+.search-results-query {
+  font-family: $body-font-family-condensed;
+  font-size: 2rem;
+  margin-bottom: rem-calc(45);
+  color: $primary-color;
+}
+
+/* ------------------------------ Header */
+
+#oi-header span {
+  padding: $ss-header-padding;
+  margin: $ss-header-margin;
+  display: block;
+  font-size: $ss-header-font-size;
+  font-weight: $ss-header-font-weight;
+  font-family: $ss-header-font-family;
+  line-height: $ss-header-line-height;
+  color: $ss-header-color;
+  background: $ss-header-background;
+}
+
+/* ------------------------------ Results */
+
+#oi-results, .oi-results {
+  margin: 0;
+  list-style: none;
+
+  .oi-result {
+    padding: $ss-result-padding;
+    background: $ss-result-even-background;
+    overflow: hidden;
+
+    &:nth-child(odd) {
+      background: $ss-result-uneven-background;
+    }
+  }
+
+  h2 {
+    margin: $ss-result-title-margin;
+    font-size: initial;
+
+    a{
+      font-size: $ss-result-title-font-size;
+      font-weight: $ss-result-title-font-weight;
+      font-family: $ss-result-title-font-family;
+      color: $ss-result-title-color;
+
+      &:hover, &:focus{
+        color: $ss-result-title-hover-color;
+      }
+    }
+  }
+
+  cite {
+    display: block;
+  }
+
+  .oi-snippet {
+    line-height: $ss-result-text-line-height;
+    font-size: $ss-result-text-font-size;
+    font-weight: $ss-result-text-font-weight;
+    font-family: $ss-result-text-font-family;
+    color: $ss-result-text-color;
+
+    em {
+      font-weight: $ss-result-highlight-font-weight;
+      color: $ss-result-title-color;
+    }
+  }
+
+  .oi-result-image {
+    float: left;
+    margin: $ss-result-image-margin;
+  }
+}
+
+/* ------------------------------ suggestions */
+
+#oi-suggestions, .oi-suggestions {
+  background: transparent;
+  border: none;
+  margin: 0;
+  list-style: none;
+
+  .oi-suggestion {
+    padding: rem-calc(5);
+    background: transparent;
+    cursor: pointer;
+    border-bottom: rem-calc(1) solid $white;
+    color: $white;
+    position: relative;
+
+    &:hover,
+    &:focus,
+    &.oi-suggestion-selected {
+      padding-left: rem-calc(15);
+    }
+
+    &:nth-child(odd) {
+      background: transparent;
+    }
+  }
+}
+
+/* ------------------------------ pagination */
+
+#oi-pager{
+  margin: $ss-pager-margin;
+
+  ul {
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      a, &.oi-pager-gap, &.oi-pager-current, &.oi-pager-disabled {
+        padding: $ss-pager-item-padding;
+        margin: $ss-pager-item-margin;
+        display: inline-block;
+        font-size: $ss-pager-item-font-size;
+        font-weight: $ss-pager-item-font-weight;
+        font-family: $ss-pager-item-font-family;
+        line-height: $ss-pager-item-line-height;
+        color: $ss-pager-item-color;
+        background: $ss-pager-item-background-color;
+
+        &:hover, &:focus {
+          color: $ss-pager-item-hover-color !important;
+          background: $ss-pager-item-hover-background-color;
+        }
+      }
+
+      &.oi-pager-gap:hover {
+        color: $ss-pager-item-color;
+        background: $ss-pager-item-background-color;
+      }
+
+      &.oi-pager-prev {
+        float: left;
+
+        a {
+          color: $ss-pager-item-hover-color !important;
+          background: $ss-pager-item-hover-background-color;
+
+          &:hover, &:focus {
+            color: $ss-pager-item-color;
+            background: $ss-pager-item-background-color !important;
+          }
+        }
+      }
+
+      &.oi-pager-next {
+        float: right;
+
+        a{
+          color: $ss-pager-item-hover-color !important;
+          background: $ss-pager-item-hover-background-color;
+
+          &:hover, &:focus {
+            color: $ss-pager-item-color;
+            background: $ss-pager-item-background-color !important;
+          }
+        }
+      }
+
+      &.oi-pager-current, &.oi-pager-current:hover {
+        color: $ss-pager-item-hover-color !important;
+        background: $ss-pager-item-hover-background-color;
+      }
+
+      &.oi-pager-disabled {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@include add-themes-colors('.search-container', background-color, false, false, 0.97);
+@include add-themes-colors('.search-results-query', color);
+@include add-themes-colors('#oi-header span', color);
+@include add-themes-colors('#oi-results h2 a', color);
+@include add-themes-colors('.oi-results h2 a', color);
+@include add-themes-colors('#oi-results .oi-snippet em', color);
+@include add-themes-colors('.oi-results .oi-snippet em', color);
+@include add-themes-colors('#oi-pager ul li.oi-pager-current', background);
+@include add-themes-colors('#oi-pager ul li.oi-pager-next a', background);
+@include add-themes-colors('#oi-pager ul li.oi-pager-prev a', background);
+@include add-themes-colors('#oi-pager ul li a', color);
+@include add-themes-colors('#oi-pager ul li.oi-pager-current', color);
+@include add-themes-colors('#oi-pager ul li.oi-pager-disabled', color);
+@include add-themes-colors('#oi-pager ul li.oi-pager-gap', color);
+
+@include add-themes-colors-hover('#oi-pager ul li a', background);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-current', background);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-current', background);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-disabled', background);
+@include add-themes-colors-hover('#oi-results h2 a', color, true);
+@include add-themes-colors-hover('.oi-results h2 a', color, true);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-gap', background);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-prev a', color, false, true);
+@include add-themes-colors-hover('#oi-pager ul li.oi-pager-next a', color, false, true);

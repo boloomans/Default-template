@@ -1,0 +1,17 @@
+html {
+  background-color: $light-gray;
+
+  @media all and #{breakpoint(small only)} {
+    font-size: 112.5%;
+  }
+}
+
+body {
+  max-width: rem-calc(2100);
+  margin: 0 auto;
+  position: relative;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}

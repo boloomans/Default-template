@@ -1,0 +1,250 @@
+#form_container, .form_container {
+  $local-form-width: 100%;
+  $local-form-max-width: 100%;
+
+  $local-form-block-margin: rem-calc(0 0 10 0);
+
+  $local-header-margin: rem-calc(0 0 10 0);
+
+  $local-textblock-margin: rem-calc(15 0 0);
+
+  $local-label-margin: rem-calc(0 0 5 0);
+
+  $local-input-margin: rem-calc(0);
+  $local-input-padding: rem-calc(0 5);
+  $local-input-height: rem-calc(40);
+  $local-input-border-radius: rem-calc(5);
+
+  $local-radio-checkbox-label-width: 92%;
+  $local-radio-checkbox-input-width: auto;
+
+  $local-textarea-height:rem-calc(90);
+
+  $local-form-btn-min-width:rem-calc(130);
+  $local-form-btn-height: rem-calc(40);
+  $local-form-btn-padding:rem-calc(0 10);
+  $local-form-btn-line-height: rem-calc(36);
+  $local-form-btn-margin:rem-calc(20 0 0 0);
+
+  $gray: #ccc;
+  $white: $white;
+
+  position:relative;
+  width: $local-form-width;
+  max-width: $local-form-max-width;
+  overflow:hidden;
+
+
+  /*------------- Form blocks ------------*/
+  div[id^='iFrm_FrmBlock'] {
+    display: inline-block;
+    width: $local-form-width;
+
+    &:not(:last-of-type) {
+      margin: $local-form-block-margin;
+    }
+  }
+
+  /*------------- Form error ------------*/
+  .form-error {
+    display: block;
+    margin-top: 0;
+  }
+
+  /*------------- Form headers H1 -> H6 ------------*/
+  .frm_Header {
+    width: $local-form-width;
+    margin:$local-header-margin;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin:0;
+      font-weight: $global-weight-bold;
+    }
+  }
+
+  /*------------- Text Block ------------*/
+
+  .frm_TextBlock {
+    width: $local-form-width;
+    margin:rem-calc(10) 0 rem-calc(15) 0;
+    font-size: rem-calc(14);
+    color:$dark-gray;
+    line-height:rem-calc(22);
+  }
+
+  /*------------- Labels ------------*/
+
+  .frm_Label {
+    width: $local-form-width;
+    margin: $local-label-margin;
+    float: left;
+    display: block;
+    font-size: rem-calc(20);
+    font-weight: 400;
+    line-height: 1.8;
+    color: $medium-gray;
+  }
+
+  /*------------- Fields ------------*/
+
+  input{
+    float:left;
+    margin: $local-input-margin;
+    border-radius:0;
+  }
+
+  .frm_FileUpload input,
+  .frm_TextBox input,
+  .frm_Numeric input,
+  .frm_PhoneNumber input,
+  .frm_Email input,
+  .frm_Calendar input,
+  .frm_MultipleChoice input.frm_RadioInput,
+  .frm_MultipleChoice input.frm_CheckInput,
+  .frm_MultipleChoice select {
+    width: $local-form-width;
+    height:$local-input-height;
+    padding:$local-input-padding;
+    border: rem-calc(1) solid $gray;
+    border-radius: $local-input-border-radius;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  /*------------- Upload ------------*/
+
+  .frm_FileUpload input {
+    padding: rem-calc(8 0 0 8);
+  }
+
+  /*------------- Radio and Checkbox Fields ------------*/
+  .frm_MultipleChoice,
+  .frm_CheckContainer,
+  .frm_RadioContainer{
+    width:$local-form-width;
+    float:left;
+
+    input {
+      width:$local-radio-checkbox-input-width;
+      margin-top: rem-calc(7);
+      margin-right: rem-calc(10);
+    }
+
+    .frm_RadioLabel {
+      width:$local-radio-checkbox-label-width;
+      float:left;
+      margin: 0;
+    }
+  }
+
+  /*------------- Calendar ------------*/
+
+  .frm_Calendar {
+    .frm_Field {
+      position: relative;
+      clear: both;
+
+      .frm_Calendar_BtnTrash {
+        position: absolute;
+        right: rem-calc(10);
+        top: rem-calc(8);
+      }
+    }
+  }
+
+  input.frm_Calendar_Datepicker {
+    background: $white;
+  }
+
+  /*------------- Textarea ------------*/
+
+  .frm_TextArea textarea {
+    width: $local-form-width;
+    height: $local-textarea-height;
+    padding:$local-input-padding;
+    display:block;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    border: 0.0625rem solid $gray;
+    border-radius: $local-input-border-radius;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  /*------------- Buttons ------------*/
+
+  .frm_BtnPrevious_Inactive,
+  .frm_BtnNext_Inactive {
+    display:none;
+  }
+
+  .frm_BtnContainer {
+    .frm_BtnNext,
+    .frm_BtnSubmit,
+    .frm_BtnCheck,
+    .frm_BtnPrevious {
+      background-color: $primary-color;
+      color:$white;
+      padding: .75rem 1.5rem;
+      display: inline-block;
+      margin-top: rem-calc(10);
+      cursor:pointer;
+      font-weight: $global-weight-bold;
+      border-radius: 1.25rem;
+      border: rem-calc(1) solid transparent;
+      transition: all 0.2s ease;
+      font-family: $body-font-family-condensed;
+      font-size: .8rem;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        color:$primary-color;
+        background-color: transparent !important;
+        border-color: $primary-color;
+      }
+    }
+
+    .frm_BtnNext {
+      float:right;
+    }
+
+    .frm_BtnPrevious{
+      float:left;
+    }
+  }
+
+  /*------------- Pagebreak ------------*/
+
+  .frm_PageBreakHr {
+    display:none;
+  }
+
+  br.clear {
+    display:none;
+  }
+
+  /*------------- TODO - form grid & subforms ------------*/
+
+}
+
+/* -------------- Datepicker -------------------- */
+
+#ui-datepicker-div {
+  select.ui-datepicker-month, select.ui-datepicker-year {
+    padding: auto;
+    margin: rem-calc(1) rem-calc(5);
+    width: 40%;
+    height: auto;
+  }
+}
+
+.fancybox-container {
+  .form_container, #form_container {
+    max-width: rem-calc(850);
+    width: 95%;
+  }
+}

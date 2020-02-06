@@ -1,0 +1,19 @@
+.btn {
+  padding: rem-calc(10 30);
+  margin-bottom: rem-calc(20);
+  display: inline-block;
+  font-weight: $global-weight-bold;
+  font-size: rem-calc(16);
+  line-height: rem-calc(24);
+  color: $white;
+  border-radius: 200px;
+
+  &.secondary {
+    background: $secondary-color;
+
+    &:hover {
+      color: $white;
+      background: darken($secondary-color, 5%);
+    }
+  }
+}

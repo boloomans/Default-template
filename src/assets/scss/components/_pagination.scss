@@ -1,0 +1,50 @@
+.pagination_container {
+  margin-top: rem-calc(20);
+
+  .pager {
+    float: left;
+
+    &.right {
+      float: right;
+    }
+
+    .arrow-block {
+      display: block;
+      background: $primary-color;
+      color: $white;
+
+      &:hover {
+        background: $light-gray;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .pager_numbers {
+    width: 100%;
+    float: left;
+    text-align: center;
+
+    span {
+      a, &.current {
+        width: 3.75rem;
+        height: 3.75rem;
+        display: inline-block;
+        font-size: 0.8125rem;
+        line-height: 3.75rem;
+        background: $primary-color;
+        color: $white;
+      }
+
+      a {
+        background: $light-gray;
+        color: $primary-color;
+
+        &:hover {
+          background: $primary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+}

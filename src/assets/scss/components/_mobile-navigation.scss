@@ -1,0 +1,113 @@
+/* Mobile navigation */
+.mobile-menu-wrap{
+  right: 0;
+  z-index: 9999;
+}
+
+// Mobile menu animation on click change hamburger to X
+.mobile-menu-button {
+  display: block;
+  background-color: $primary-color;
+  padding: rem-calc(15);
+  width: rem-calc(60);
+  height: rem-calc(60);
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+
+  .mobile-menu-icon {
+    display: block;
+    position: relative;
+    width: rem-calc(30);
+    height: rem-calc(30);
+
+    .mobile-menu-icon-bar {
+      display: block;
+      width: 100%;
+      height: rem-calc(4);
+      position: absolute;
+      top: rem-calc(28);
+      left: 0;
+      background: $white;
+      border-radius: rem-calc(10);
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: all 250ms ease-in-out;
+      -moz-transition: all 250ms ease-in-out;
+      -ms-transition: all 250ms ease-in-out;
+      -o-transition: all 250ms ease-in-out;
+      transition: all 250ms ease-in-out;
+
+      &:nth-child(1) {
+        top: rem-calc(3);
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: rem-calc(13);
+      }
+
+      &:nth-child(4) {
+        top: rem-calc(23);
+      }
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  &[aria-expanded="true"] {
+
+    .mobile-menu-icon-bar {
+
+      &:nth-child(1),
+      &:nth-child(4) {
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+//#mobile-menu{
+//  background: $secondary-color;
+//  z-index: 99999;
+//
+//  .mobile-menu {
+//
+//    .active a:after{
+//      border-color: transparent transparent transparent $white;
+//    }
+//
+//    .menu-item a {
+//      padding: 1rem;
+//      font-weight: bold;
+//      color: $white;
+//    }
+//
+//    .submenu {
+//      background-color: $secondary-color;
+//    }
+//  }
+//}
